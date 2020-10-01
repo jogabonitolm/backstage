@@ -7,5 +7,5 @@ spec:
   type: github
   targets:
     - https://github.com/spotify/backstage/blob/master/packages/catalog-model/examples/hello-world-api.yaml
-    - https://github.com/jogabonito/backstage/blob/master/api-templates/examples/test-api.yaml
+    - https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/test-api.yaml
     - https://github.com/spotify/backstage/blob/master/packages/catalog-model/examples/spotify-api.yaml
