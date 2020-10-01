@@ -1,11 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: Locations
+  name: locations
   description: The Doddle Locations API
   tags:
     - doddle
-    - locations
+    - spotify
+    - rest
   annotations:
     backstage.io/definition-at-location: 'url:https://raw.githubusercontent.com/jogabonitolm/backstage/master/api-templates/examples/test-swagger.yaml'
 spec:
