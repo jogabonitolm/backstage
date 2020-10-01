@@ -1,15 +1,14 @@
-apiVersion: backstage.io/v1alpha1
+apiVersion: backstage.io/doddlev1
 kind: API
 metadata:
-  name: doddle
-  description: The Doddle web API
+  name: Locations
+  description: The Doddle Locations API
   tags:
-    - spotify
     - doddle
-    - rest
+    - locations
   annotations:
     backstage.io/definition-at-location: 'url:https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/test-swagger.yaml'
 spec:
   type: openapi
   lifecycle: production
-  owner: spotify@example.com
+  owner: luke.murphy@doddle.com
