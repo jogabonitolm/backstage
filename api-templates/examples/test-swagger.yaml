@@ -22,8 +22,41 @@ consumes:
 produces:
   - application/json
 securityDefinitions:
-  oauth_2_0_accessCode:
-    tokenUrl: 'https://apigw.eu-preprod.doddle.tech/v1/oauth/token'
+  oauth_2_0_application:
+    description: |
+      Spotify supports OAuth 2.0 for authenticating all API requests.
+    flow: application
+    scopes:
+      playlist-modify-private: ''
+      playlist-modify-public: ''
+      playlist-read-collaborative: ''
+      playlist-read-private: ''
+      user-follow-modify: ''
+      user-follow-read: ''
+      user-library-modify: ''
+      user-library-read: ''
+      user-read-birthdate: ''
+      user-read-email: ''
+      user-read-private: ''
+    tokenUrl: 'https://accounts.spotify.com/api/token'
+    type: oauth2
+  oauth_2_0_implicit:
+    authorizationUrl: 'https://accounts.spotify.com/authorize'
+    description: |
+      Spotify supports OAuth 2.0 for authenticating all API requests.
+    flow: implicit
+    scopes:
+      playlist-modify-private: ''
+      playlist-modify-public: ''
+      playlist-read-collaborative: ''
+      playlist-read-private: ''
+      user-follow-modify: ''
+      user-follow-read: ''
+      user-library-modify: ''
+      user-library-read: ''
+      user-read-birthdate: ''
+      user-read-email: ''
+      user-read-private: ''
     type: oauth2
 paths:
   /browse/categories:
