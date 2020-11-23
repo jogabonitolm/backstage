@@ -2,7 +2,7 @@ swagger: '2.0'
 schemes:
   - https
 host: apigw.eu-preprod.doddle.tech
-basePath: /v1
+basePath: /v3
 info:
   title: Store
   version: v3
@@ -57,7 +57,7 @@ paths:
         '429':
           description: |
             API rate limit exceeded. See http://developer.spotify.com/web-api/user-guide/#rate-limiting for details.
-  '/v3/stores/company/{companyId}/feed':
+  '/stores/company/{companyId}/feed':
     get:
       description: |
         Get stores feed for Company - FOR RETAILERS
