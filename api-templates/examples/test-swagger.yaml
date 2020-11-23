@@ -13,15 +13,14 @@ consumes:
 produces:
   - application/json
 securityDefinitions:
-  oauth_2_0_application:
-    description: |
-      Spotify supports OAuth 2.0 for authenticating all API requests.
-    flow: application
-    scopes:
-      stores:read: ''
-      stores_write: ''
-    tokenUrl: 'https://apigw.eu-preprod.doddle.tech/v1/oauth/token'
+OAuth2:
     type: oauth2
+    flow: clientCredentials
+    tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
+    scopes:
+      read: Grants read access
+      write: Grants write access
+      admin: Grants read and write access to administrative information
 paths:
   '/stores/{externalId}':
     get:
