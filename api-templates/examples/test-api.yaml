@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: stores-v3
+  name: stores
   description: The Doddle Stores API
   tags:
     - doddle
