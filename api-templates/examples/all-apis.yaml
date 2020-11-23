@@ -6,6 +6,6 @@ metadata:
 spec:
   type: github
   targets:
-    - https://github.com/spotify/backstage/blob/master/packages/catalog-model/examples/hello-world-api.yaml
+    - https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/apis/hello-world-api.yaml
     - https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/test-api.yaml
-    - https://github.com/spotify/backstage/blob/master/packages/catalog-model/examples/spotify-api.yaml
+    - https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/apis/spotify-api.yaml
