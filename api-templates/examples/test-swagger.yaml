@@ -4,7 +4,7 @@ schemes:
 host: apigw.eu-preprod.doddle.tech
 basePath: /v3
 info:
-  title: Store
+  title: Stores
   version: v3
 externalDocs:
   url: 'https://apigw.eu-preprod.doddle.tech'
