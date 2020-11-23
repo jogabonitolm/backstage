@@ -1,11 +1,10 @@
-apiVersion: backstage.io/v1alpha1
+apiVersion: doddle/v1beta1
 kind: API
 metadata:
-  name: locations
-  description: The Doddle Locations API
+  name: stores-v3
+  description: The Doddle Stores API
   tags:
     - doddle
-    - spotify
     - rest
 spec:
   type: openapi
