@@ -18,7 +18,7 @@ securityDefinitions:
     flow: application
     tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
     scopes:
-      DoddleServers: Grants read access
+      stores:read: Grants read access
       admin: Grants read and write access to administrative information
 paths:
   '/stores/{externalId}':
@@ -49,8 +49,8 @@ paths:
           in: header
           name: Accept
           type: string
-      security    
-        - OAuth2: [DoddleServers]    
+      security:    
+        - OAuth2: [stores:read]  
       responses:
         '200':
           description: OK
