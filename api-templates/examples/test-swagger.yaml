@@ -15,7 +15,7 @@ produces:
 securityDefinitions:
 OAuth2:
     type: oauth2
-    flow: clientCredentials
+    flow: application
     tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
     scopes:
       read: Grants read access
