@@ -7,8 +7,6 @@ metadata:
     - doddle
     - spotify
     - rest
-  annotations:
-    backstage.io/definition-at-location: 'url:https://raw.githubusercontent.com/jogabonitolm/backstage/master/api-templates/examples/test-swagger.yaml'
 spec:
   type: openapi
   lifecycle: production
