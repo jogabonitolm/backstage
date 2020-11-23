@@ -1,4 +1,4 @@
-apiVersion: doddle/v1beta1
+apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: stores-v3
