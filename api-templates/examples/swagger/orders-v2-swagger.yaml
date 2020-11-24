@@ -43,14 +43,14 @@ paths:
         '429':
           description: |
             API rate limit exceeded.
-  '/orders/externalorderid/{externalorderid}/companyId/{companyId}':
+  '/orders/externalorderid/{externalorderId}/companyId/{companyId}':
     get:
       description: |
         Get an order by order id
       parameters:
-        - description: The order uuid
+        - description: The retailer order id
           in: path
-          name: orderId
+          name: externalorderId
           required: true
           type: string
         - description: The company id
