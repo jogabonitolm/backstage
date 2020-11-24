@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
-kind: Location
+kind: Doddle
 metadata:
-  name: example-apis
-  description: A collection of all Backstage example APIs
+  name: doddle-backstage-apis
+  description: A collection of Doddle Test APIs
 spec:
   type: github
   targets:
     - https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/apis/hello-world-api.yaml
-    - https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/test-api.yaml
+    - https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/stores-v3-api.yaml
     - https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/apis/spotify-api.yaml
