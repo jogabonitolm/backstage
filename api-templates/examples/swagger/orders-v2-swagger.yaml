@@ -25,6 +25,8 @@ paths:
     post:
       description: |
        Submit an order to Doddle 
+      consumes:
+        - application/json 
       parameters:
         - description: The company id
           in: body
@@ -46,10 +48,6 @@ paths:
           name: orderLines
           schema:
             $ref: '#/definitions/OrderLines'                    
-        - description: It is used to set specified media type.
-          in: header
-          name: Accept
-          type: string
       security:    
         - OAuth2: [orders:read, orders:write]  
       responses:
