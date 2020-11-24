@@ -1,0 +1,72 @@
+swagger: '2.0'
+schemes:
+  - https
+host: apigw.eu-preprod.doddle.tech
+basePath: /v2
+info:
+  title: Orders
+  version: v2
+externalDocs:
+  url: 'https://apigw.eu-preprod.doddle.tech'
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  OAuth2:
+    type: oauth2
+    flow: application
+    tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
+    scopes:
+      orders:read: Grants read access
+      orders:write: Grants write access
+paths:
+  '/orders/orderId/:orderId':
+    get:
+      description: |
+        Get an order by order id
+      parameters:
+        - description: The order uuid
+          in: path
+          name: orderId
+          required: true
+          type: string
+        - description: It is used to set specified media type.
+          in: header
+          name: Accept
+          type: string
+      security:    
+        - OAuth2: [orders:read]  
+      responses:
+        '200':
+          description: OK
+        '429':
+          description: |
+            API rate limit exceeded.
+  '/orders/externalorderid/{externalorderid}/companyId/{companyId}:
+    get:
+      description: |
+        Get an order by order id
+      parameters:
+        - description: The order uuid
+          in: path
+          name: orderId
+          required: true
+          type: string
+        - description: The company id
+          in: path
+          name: companyId
+          required: true
+          type: string  
+        - description: It is used to set specified media type.
+          in: header
+          name: Accept
+          type: string
+      security:    
+        - OAuth2: [orders:read]  
+      responses:
+        '200':
+          description: OK
+        '429':
+          description: |
+            API rate limit exceeded.
