@@ -11,15 +11,18 @@ components:
       type: oauth2
       flows: 
         clientCredentials: 
-          tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
+          tokenUrl: /v1/oauth/token
           scopes:
             orders:read: Grants read access
             orders:write: Grants write access
-security: [orders:read,  orders:write]
 paths:
   /orders/:
     post:
       description: Submit an order to Doddle 
+      security:
+        - OAuth2:
+          - orders:read
+          - orders:write
       requestBody:
         required: true
         content:
@@ -49,7 +52,7 @@ paths:
         '429':
           description: |
             API rate limit exceeded.
-  '/orders/externalorderid/{externalorderId}/companyId/{companyId}':
+  /orders/externalorderid/{externalorderId}/companyId/{companyId}:
     get:
       description: |
         Get an order by order id
