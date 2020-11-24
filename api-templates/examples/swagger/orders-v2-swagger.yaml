@@ -28,26 +28,11 @@ paths:
       consumes:
         - application/json 
       parameters:
-        - description: The company id
+        - description: The JSON request body
           in: body
-          name: companyId
+          name: body
           required: true
-          type: string
-        - description: The retailer order id
-          in: body
-          name: externalOrderId
-          required: true
-          type: string
-        - description: The customer object
-          in: body
-          name: customer
-          schema:
-            $ref: '#/definitions/Customer'
-        - description: Order Line Information
-          in: body
-          name: orderLines
-          schema:
-            $ref: '#/definitions/OrderLines'                    
+          type: object        
       security:    
         - OAuth2: [orders:read, orders:write]  
       responses:
