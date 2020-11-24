@@ -8,5 +8,4 @@ spec:
   targets:
     - https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/apis/hello-world-api.yaml
     - https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/stores-v3-api.yaml
-    - https://github.com/jogabonitolm/backstage/blob/master/api-templates/examples/orders-v2-api.yaml
     - https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/apis/spotify-api.yaml
