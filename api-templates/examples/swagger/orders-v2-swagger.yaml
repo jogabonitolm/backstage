@@ -21,6 +21,43 @@ securityDefinitions:
       orders:read: Grants read access
       orders:write: Grants write access
 paths:
+  '/orders':
+    post:
+      description: |
+       Submit an order to Doddle 
+      parameters:
+        - description: The company id
+          in: body
+          name: companyId
+          required: true
+          type: string
+        - description: The retailer order id
+          in: body
+          name: externalOrderId
+          required: true
+          type: string
+        - description: The customer object
+          in: body
+          name: customer
+          schema:
+            $ref: '#/definitions/Customer'
+        - description: Order Line Information
+          in: body
+          name: orderLines
+          schema:
+            $ref: '#/definitions/OrderLines'                    
+        - description: It is used to set specified media type.
+          in: header
+          name: Accept
+          type: string
+      security:    
+        - OAuth2: [orders:read, orders:write]  
+      responses:
+        '200':
+          description: OK
+        '429':
+          description: |
+            API rate limit exceeded.
   '/orders/orderId/{orderId}':
     get:
       description: |
@@ -70,3 +107,37 @@ paths:
         '429':
           description: |
             API rate limit exceeded.
+definitions:
+  Customer:          
+    type: object
+    required:
+      - name
+    properties:
+      email:
+        type: string
+      mobileNumber:
+        type: string
+      name:
+        type: object
+        properties:
+          firstName:
+            type: string
+          lastName:
+            type: string
+        required:
+          - firstName
+  OrderLines:
+    type: array
+    items: {}
+  SourceLocation:
+    type: array
+    items:
+      type: object
+      properties:
+        locationType:
+          type: string
+  DestinationLocation:
+    type: object
+    properties:
+      locationType:
+        type: string
