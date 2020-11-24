@@ -21,7 +21,7 @@ securityDefinitions:
       orders:read: Grants read access
       orders:write: Grants write access
 paths:
-  '/orders':
+  '/orders/':
     post:
       description: |
        Submit an order to Doddle 
