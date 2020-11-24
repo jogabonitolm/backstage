@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: Doddle
+kind: API
 metadata:
   name: doddle-backstage-apis
   description: A collection of Doddle Test APIs
