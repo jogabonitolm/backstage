@@ -1,47 +1,38 @@
-swagger: '2.0'
-schemes:
-  - https
-host: apigw.eu-preprod.doddle.tech
-basePath: /v2
+openapi: "3.0.0"
 info:
   title: Orders
   version: v2
-externalDocs:
-  url: 'https://apigw.eu-preprod.doddle.tech'
-consumes:
-  - application/json
-produces:
-  - application/json
-securityDefinitions:
-  OAuth2:
-    type: oauth2
-    flow: application
-    tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
-    scopes:
-      orders:read: Grants read access
-      orders:write: Grants write access
+servers:
+  - url: https://apigw.eu-preprod.doddle.tech/v2
+  - url: https://apigw.apac-preprod.doddle.tech/v2
+components: 
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows: 
+        clientCredentials: 
+          tokenUrl: https://apigw.eu-preprod.doddle.tech/v1/oauth/token
+          scopes:
+            orders:read: Grants read access
+            orders:write: Grants write access
+security: [orders:read,  orders:write]
 paths:
-  '/orders/':
+  /orders/:
     post:
-      description: |
-       Submit an order to Doddle 
-      consumes:
-        - application/json 
-      parameters:
-        - description: The JSON request body
-          in: body
-          name: body
-          required: true
-          type: object        
-      security:    
-        - OAuth2: [orders:read, orders:write]  
+      description: Submit an order to Doddle 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
       responses:
         '200':
           description: OK
         '429':
           description: |
             API rate limit exceeded.
-  '/orders/orderId/{orderId}':
+  /orders/orderId/{orderId}:
     get:
       description: |
         Get an order by order id
@@ -50,13 +41,8 @@ paths:
           in: path
           name: orderId
           required: true
-          type: string
-        - description: It is used to set specified media type.
-          in: header
-          name: Accept
-          type: string
-      security:    
-        - OAuth2: [orders:read]  
+          schema:
+              type: string
       responses:
         '200':
           description: OK
@@ -72,55 +58,17 @@ paths:
           in: path
           name: externalorderId
           required: true
-          type: string
+          schema:
+              type: string
         - description: The company id
           in: path
           name: companyId
           required: true
-          type: string  
-        - description: It is used to set specified media type.
-          in: header
-          name: Accept
-          type: string
-      security:    
-        - OAuth2: [orders:read]  
+          schema:
+              type: string 
       responses:
         '200':
           description: OK
         '429':
           description: |
             API rate limit exceeded.
-definitions:
-  Customer:          
-    type: object
-    required:
-      - name
-    properties:
-      email:
-        type: string
-      mobileNumber:
-        type: string
-      name:
-        type: object
-        properties:
-          firstName:
-            type: string
-          lastName:
-            type: string
-        required:
-          - firstName
-  OrderLines:
-    type: array
-    items: {}
-  SourceLocation:
-    type: array
-    items:
-      type: object
-      properties:
-        locationType:
-          type: string
-  DestinationLocation:
-    type: object
-    properties:
-      locationType:
-        type: string
