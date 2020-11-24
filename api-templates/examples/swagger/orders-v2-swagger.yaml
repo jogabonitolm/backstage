@@ -39,6 +39,10 @@ paths:
     get:
       description: |
         Get an order by order id
+      security:
+        - OAuth2:
+          - orders:read
+          - orders:write
       parameters:
         - description: The order uuid
           in: path
@@ -56,6 +60,10 @@ paths:
     get:
       description: |
         Get an order by order id
+      security:
+        - OAuth2:
+          - orders:read
+          - orders:write  
       parameters:
         - description: The retailer order id
           in: path
