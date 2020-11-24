@@ -21,7 +21,7 @@ securityDefinitions:
       orders:read: Grants read access
       orders:write: Grants write access
 paths:
-  '/orders/orderId/:orderId':
+  '/orders/orderId/{orderId}':
     get:
       description: |
         Get an order by order id
