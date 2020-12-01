@@ -1,0 +1,8 @@
+site_name: 'location-finder-docs'
+
+nav:
+  - Home: index.md
+  - SubPage: sub-page.md
+
+plugins:
+  - techdocs-core
