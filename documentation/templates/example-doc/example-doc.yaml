@@ -4,7 +4,7 @@ metadata:
   name: documented-component
   description: Sample Doddle Product Documentation
   annotations:
-    backstage.io/techdocs-ref: 'github:https://github.com/jogabonitolm/backstage/blob/master/documentation/templates/example-doc/example-doc.yaml'
+    backstage.io/techdocs-ref: 'github:https://github.com/jogabonitolm/backstage/blob/master/documentation/templates/example-doc'
 spec:
   type: service
   lifecycle: experimental
